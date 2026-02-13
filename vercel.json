@@ -1,7 +1,7 @@
 {
   "buildCommand": "pnpm build",
-  "installCommand": "pnpm i --frozen-lockfile",
+  "installCommand": "pnpm i --frozen-lockfile --registry=https://registry.npmjs.org",
   "framework": "nextjs",
-  "env": {},
+  "env": { "NODE_VERSION": "20" },
   "github": { "enabled": true }
 }
