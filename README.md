@@ -69,3 +69,13 @@ Connection string (DATABASE_URL):
 ```
 postgresql://postgres:postgres@db:5432/english?schema=public
 ```
+
+## Environment Variables
+Create .env from .env.example:
+```
+OPENAI_API_KEY=sk-...
+DATABASE_URL=postgresql://postgres:postgres@db:5432/english?schema=public
+```
+Notes:
+- Use the same OpenAI API you already use with this assistant.
+- Never commit real secrets. .env is gitignored.
