@@ -1,10 +1,7 @@
 {
   "buildCommand": "pnpm build",
-  "installCommand": "pnpm i",
+  "installCommand": "pnpm i --frozen-lockfile",
   "framework": "nextjs",
-  "env": {
-  },
-  "github": {
-    "enabled": true
-  }
+  "env": {},
+  "github": { "enabled": true }
 }
