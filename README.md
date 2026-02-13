@@ -15,3 +15,25 @@ Fast-track to English fluency in 6 months: daily micro-lessons, pronunciation dr
 - Progress tracking (streak, words learned, lessons done)
 - Friendly, concise outputs (PT-BR + EN friendly)
 - Production-ready Docker setup
+
+## Quick Start (Local Dev)
+Requirements:
+- Node.js >= 20, pnpm (or npm/yarn)
+- Docker (optional but recommended)
+
+Steps:
+1) Clone and install
+```
+pnpm i
+# or: npm i / yarn
+```
+2) Create env file
+```
+cp .env.example .env
+# set OPENAI_API_KEY and (optionally) adjust DATABASE_URL
+```
+3) Run dev server
+```
+pnpm dev
+# open http://localhost:3000
+```
