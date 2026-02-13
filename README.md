@@ -79,3 +79,34 @@ DATABASE_URL=postgresql://postgres:postgres@db:5432/english?schema=public
 Notes:
 - Use the same OpenAI API you already use with this assistant.
 - Never commit real secrets. .env is gitignored.
+
+## API Endpoints
+- GET /api/progress → { progress: { streak, wordsLearned, lessonsDone } }
+- POST /api/generate { topic, level } → returns a concise micro-lesson (text)
+
+## Deployment
+### Vercel (recommended)
+- Import this repo
+- Set env vars (OPENAI_API_KEY, DATABASE_URL)
+- Build command: `pnpm build` (Node 20+)
+- Next.js runtime: Node.js
+
+### Render / Fly.io / Railway
+- Build with `pnpm build`; start with `pnpm start -p 3000`
+- Provide Postgres (managed) and the same env vars
+
+## Security & Cost Control
+- Keep OPENAI_API_KEY secret; rotate if exposed
+- Use smaller models for drafts (e.g., gpt-4o-mini) and switch up for evaluations if needed
+- Add basic rate limiting at the API layer (future work)
+
+## Roadmap (6 months to fluency)
+- Phase 1: core curriculum + daily micro-lessons (weeks 1–4)
+- Phase 2: spaced repetition + weekly review (weeks 5–8)
+- Phase 3: speaking drills + feedback loops (weeks 9–16)
+- Phase 4: real-world tasks + mock interviews (weeks 17–24)
+
+## Troubleshooting
+- If Docker Postgres isn’t ready, retry Prisma generate/migrate after a few seconds
+- Check `.env` is present and keys are set
+- Use `docker compose logs -f web db` for live logs
