@@ -1,5 +1,6 @@
+export const dynamic = 'force-dynamic'
 import useSWR from 'swr'
-const fetcher = (url:string)=>fetch(url).then(r=>r.json())
+const fetcher = (url:string)=>fetch(url, { cache: 'no-store' }).then(r=>r.json())
 export default function Dashboard(){
   const { data, isLoading, error } = useSWR('/api/progress', fetcher)
   const p = data?.progress ?? { streak: 0, wordsLearned: 0, lessonsDone: 0 }
