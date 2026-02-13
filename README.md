@@ -37,3 +37,17 @@ cp .env.example .env
 pnpm dev
 # open http://localhost:3000
 ```
+
+## Running with Docker (Recommended)
+```
+docker compose up -d --build
+# Next.js on http://localhost:3000, Postgres on localhost:5432
+```
+Then (optional) generate Prisma client inside the container:
+```
+docker compose exec web pnpm prisma:generate
+```
+To stop:
+```
+docker compose down
+```
