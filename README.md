@@ -51,3 +51,21 @@ To stop:
 ```
 docker compose down
 ```
+
+## Database & Prisma
+- DB: PostgreSQL 16 (docker-compose)
+- ORM: Prisma 5
+
+Migrate & generate locally:
+```
+pnpm prisma:generate
+pnpm prisma:migrate
+```
+Seed (optional):
+```
+pnpm seed
+```
+Connection string (DATABASE_URL):
+```
+postgresql://postgres:postgres@db:5432/english?schema=public
+```
